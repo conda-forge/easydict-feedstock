@@ -31,9 +31,7 @@ test:
     - pip
 
 about:
-  description: |
-    EasyDict allows to access dict values as attributes (works recursively). 
-    A Javascript-like properties dot notation for python dicts.
+  description: EasyDict allows to access dict values as attributes (works recursively). A Javascript-like properties dot notation for python dicts.
   home: https://github.com/makinacorpus/easydict
   summary: Access dict values as attributes (works recursively).
   license: LGPL-3.0-only
