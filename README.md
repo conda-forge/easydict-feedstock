@@ -9,9 +9,7 @@ Package license: LGPL-3.0-only
 
 Summary: Access dict values as attributes (works recursively).
 
-EasyDict allows to access dict values as attributes (works recursively).
-A Javascript-like properties dot notation for python dicts.
-
+EasyDict allows to access dict values as attributes (works recursively). A Javascript-like properties dot notation for python dicts.
 
 Current build status
 ====================
