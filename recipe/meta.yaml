@@ -7,15 +7,15 @@ source:
     url: https://pypi.io/packages/source/e/easydict/easydict-{{ version }}.tar.gz
 build:
     noarch: python
-    number: '0'
+    number: 1
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
     host:
-        - python
+        - python >=3.6
         - pip
     run:
-        - python
+        - python >=3.6
 test:
     imports:
         - easydict
@@ -36,15 +36,16 @@ about:
             3
             >>> d.bar.x
             1
-            
+
             >>> d = edict(foo=3)
             >>> d.foo
             3
 
     home: https://github.com/makinacorpus/easydict
-    license: LGPL
+    license: LGPL-3.0-or-later
     license_file: LICENSE
     summary: Access dict values as attributes (works recursively).
 extra:
     recipe-maintainers:
         - zhaofeng-shu33
+        - thewchan
