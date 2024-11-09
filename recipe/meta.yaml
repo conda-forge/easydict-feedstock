@@ -47,4 +47,5 @@ about:
     summary: Access dict values as attributes (works recursively).
 extra:
     recipe-maintainers:
+        - jeongseok-meta
         - zhaofeng-shu33
