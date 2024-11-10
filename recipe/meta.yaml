@@ -4,7 +4,7 @@ package:
   version: {{ version }}
 source:
   sha256: b1135dedbc41c8010e2bc1f77ec9744c7faa42bce1a1c87416791449d6c87780
-  url: https://pypi.io/packages/source/e/easydict/easydict-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/e/easydict/easydict-{{ version }}.tar.gz
 build:
   noarch: python
   number: 1
@@ -12,14 +12,16 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 test:
   imports:
     - easydict
+  requires:
+    - python {{ python_min }}
 about:
   description: |
     *EasyDict* allows to access dict values as attributes (works recursively). 
