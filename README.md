@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/easydict-feedst
 
 Home: https://github.com/makinacorpus/easydict
 
-Package license: LGPL
+Package license: LGPL-3.0-only
 
 Summary: Access dict values as attributes (works recursively).
 
