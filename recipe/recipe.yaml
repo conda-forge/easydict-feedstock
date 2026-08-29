@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: easydict
+  version: "1.13"
+  python_min: "3.6"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/e/easydict/easydict-${{ version }}.tar.gz
+  sha256: b1135dedbc41c8010e2bc1f77ec9744c7faa42bce1a1c87416791449d6c87780
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - easydict
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+      - python -c "from easydict import EasyDict; assert EasyDict(dict(a=dict(b=1))).a.b == 1"
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+
+about:
+  homepage: https://github.com/makinacorpus/easydict
+  repository: https://github.com/makinacorpus/easydict
+  summary: Access dict values as attributes (works recursively).
+  description: |
+    EasyDict allows access to dictionary values as attributes and works
+    recursively, providing JavaScript-like dot notation for Python mappings.
+  license: LGPL-3.0-only
+  license_file: LICENSE
+
+extra:
+  feedstock-name: easydict
+  recipe-maintainers:
+    - zhaofeng-shu33
+    - jeongseok-meta
