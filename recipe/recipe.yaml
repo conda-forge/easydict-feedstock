@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: easydict
-  version: "1.13"
+  version: "1.14"
   python_min: "3.6"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/easydict/easydict-${{ version }}.tar.gz
-  sha256: b1135dedbc41c8010e2bc1f77ec9744c7faa42bce1a1c87416791449d6c87780
+  sha256: 0624565381af060cd878fffda4c42164f5de723797f1e998a0a866277abadcb6
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
