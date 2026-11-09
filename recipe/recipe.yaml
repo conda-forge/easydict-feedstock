@@ -3,7 +3,6 @@ schema_version: 1
 context:
   name: easydict
   version: "1.14"
-  python_min: "3.6"
 
 package:
   name: ${{ name }}
@@ -22,7 +21,9 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    # Match upstream's pyproject.toml build-system requirements.
+    - setuptools >=77
+    - setuptools-scm >=8
   run:
     - python >=${{ python_min }}
 
@@ -36,6 +37,7 @@ tests:
         - "*"
   - script:
       - python -c "from easydict import EasyDict; assert EasyDict(dict(a=dict(b=1))).a.b == 1"
+      - python -c "import importlib.metadata as m; assert m.version('easydict') == '${{ version }}'"
     requirements:
       run:
         - python ${{ python_min }}.*
